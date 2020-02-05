@@ -39,7 +39,7 @@ export class AuthEffects {
           console.log(user);
           return new LogInSuccess({token: user.token, email: payload.email});
         })
-        .catch((error: any) => {
+        .catch((error) => {
           console.log(error);
           return Observable.of(new LogInFailure({ error }));
         });
@@ -48,7 +48,7 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   LogInSuccess: Observable<any> = this.actions.pipe(
     ofType(AuthActionTypes.LOGIN_SUCCESS),
-    tap((user: any) => {
+    tap((user) => {
       localStorage.setItem('token', user.payload.token);
       this.router.navigateByUrl('/');
     })
