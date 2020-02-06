@@ -53,6 +53,9 @@ export function reducer(state = initialState, action: All): State {
         errorMessage: 'That email is already in use.'
       };
     }
+    case AuthActionTypes.LOGOUT: {
+      return initialState;
+    }
     default: {
       return state;
     }
