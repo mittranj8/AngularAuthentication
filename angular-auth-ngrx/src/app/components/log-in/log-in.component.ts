@@ -28,7 +28,7 @@ export class LogInComponent implements OnInit {
     this.getState.subscribe((state) => {
       this.errorMessage = state.errorMessage;
     });
-  };
+  }
 
   onSubmit(): void {
     const payload = {
